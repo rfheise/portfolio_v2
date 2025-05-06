@@ -15,10 +15,10 @@ function App() {
     <div className="App">
         <Header />
         {/* <About /> */}
-        <ExperienceList />
-        <Education />
-        <ProjectList />
-        <SkillList />
+        {/* <ExperienceList /> */}
+        {/* <Education /> */}
+        {/* <ProjectList /> */}
+        {/* <SkillList /> */}
     </div>
   );
 }
