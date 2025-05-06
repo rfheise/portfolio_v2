@@ -6,6 +6,4 @@ export interface SkillData {
 
 export let skill_data:string[] = [
     "noice",
-    "cock",
-    "bro"
 ]

@@ -6,14 +6,15 @@ import About from './About/About'
 import Education from './Education/Education'
 import ProjectList from './Project/ProjectList'
 import SkillList from './Skills/SkillList'
+
+import Header from './Header'
+
+
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Ryan Heise</h1>
-        <p className="title">Aspiring Memer</p>
-        </header>
-        <About />
+        <Header />
+        {/* <About /> */}
         <ExperienceList />
         <Education />
         <ProjectList />
