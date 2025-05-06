@@ -1,13 +1,24 @@
 import Skill from './Skill'
-import {skill_data} from './SkillData'
+import {frameworks, languages} from './SkillData'
 
 export default function Skills() {
     return (
         <section className="skills active">
-        <h2>Skills</h2>
-        
+        <div className= "skill-header-div">
+        <h3 className='skill-header'>
+        Languages
+        </h3>
+        </div>
         <div className="skills-container">
-            {skill_data.map(x => (<Skill name= {x}/>))}
+            {languages.map(x => (<Skill name= {x}/>))}
+        </div>
+        <div className= "skill-header-div">
+        <h3 className='skill-header'>
+            Technologies & Frameworks
+        </h3>
+        </div>
+        <div className="skills-container">
+            {frameworks.map(x => (<Skill name= {x}/>))}
         </div>
     </section>
     )

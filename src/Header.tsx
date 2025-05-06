@@ -12,7 +12,7 @@ export default function Header() {
         <p className="title">My life goal is to organically get the best SEO for "Ryan Heise"</p>
         <a className = "resume" href = "/resume.pdf">
         <img src = {resume} alt = "resume" />
-        <div >
+        <div className="resume-title">
             Resume
         </div>
         </a>
