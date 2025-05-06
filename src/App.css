@@ -1,4 +1,23 @@
 /* Base Styles */
+.header-flex {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contact-flex {
+  display:flex;
+  flex-direction: row;
+  align-items: space-around;
+  justify-content: space-around;
+  width:50%;
+}
+.contact-flex img {
+  width: 4rem;            /* adjust to taste */
+  height: 4rem;           /* keep same as width for a perfect circle */
+  display: block;          /* remove inline‐block gaps if any */
+  margin-bottom: 1rem; 
+}
 :root {
   --bg-color: #121225;
   --text-color: #e0e0e0;
@@ -41,7 +60,34 @@
   padding: 0;
   box-sizing: border-box;
 }
+.resume {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.75rem;
+  margin-bottom:1rem;
+}
+.resume img {
+  width: 4rem;
+  height: 4rem;
+}
+.profile-pic {
+  width: 12rem;            /* adjust to taste */
+  height: 12rem;           /* keep same as width for a perfect circle */
+  border-radius: 50%;      /* makes it circular */
+  object-fit: cover;       /* crops/zooms so it fills the circle */
+  border: 3px solid #ccc;  /* light gray border—swap color as needed */
+  display: block;          /* remove inline‐block gaps if any */
+  margin-bottom: 1rem;     /* spacing below the image */
+}
 
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 body {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   background-color: var(--bg-color);
@@ -128,7 +174,7 @@ p {
 }
 
 a {
-  color: var(--neon-green);
+  color: var(--neon-purple);
   text-decoration: none;
   position: relative;
   transition: all 0.3s;
@@ -141,16 +187,16 @@ a::before {
   height: 1px;
   bottom: -2px;
   left: 0;
-  background-color: var(--neon-green);
+  background-color: var(--neon-purple);
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s;
-  box-shadow: 0 0 3px var(--neon-green);
+  box-shadow: 0 0 3px var(--neon-purple);
 }
 
 a:hover {
-  color: var(--neon-green);
-  text-shadow: 0 0 2px var(--neon-green);
+  color: var(--neon-purple);
+  text-shadow: 0 0 2px var(--neon-purple);
 }
 
 a:hover::before {
@@ -443,16 +489,21 @@ footer::before {
 @media (max-width: 768px) {
   h1 {
       font-size: 2.3rem;
+      text-align: center;
   }
   
   h2 {
       font-size: 1.8rem;
+      text-align: center;
   }
   
   h3 {
       font-size: 1.4rem;
+      text-align: center;
   }
-  
+  p {
+    text-align: center;
+  }
   section {
       padding: 1.5rem;
   }
@@ -463,6 +514,9 @@ footer::before {
   
   .projects-grid {
       grid-template-columns: 1fr;
+  }
+  .contact-flex {
+    width:95%;
   }
 }
 
