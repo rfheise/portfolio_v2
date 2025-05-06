@@ -8,6 +8,7 @@ import ProjectList from './Project/ProjectList'
 import SkillList from './Skills/SkillList'
 
 import Header from './Header'
+import Contact from './Contact/Contact'
 
 
 function App() {
@@ -15,10 +16,11 @@ function App() {
     <div className="App">
         <Header />
         {/* <About /> */}
-        {/* <ExperienceList /> */}
-        {/* <Education /> */}
-        {/* <ProjectList /> */}
-        {/* <SkillList /> */}
+        <ExperienceList />
+        <Education />
+        <ProjectList />
+        <SkillList />
+        <Contact />
     </div>
   );
 }

@@ -8,10 +8,17 @@ export default function Project(props:ProjectData) {
                 </div>
                 <div className="project-content">
                     <h3 className="project-title">{props.name}</h3>
+                    <p className ="date" style = {{"textAlign":"center"}}>{props.tech}</p>
                     <p className="project-description">{props.about}</p>
                     <div className="project-links">
-                        <a href="#" className="cyber-btn" target="_blank">{props.github}</a>
-                        <a href="#" className="cyber-btn cyber-btn-secondary" target="_blank">{props.demo}</a>
+                        {props.github &&
+                        <a href={props.github} className="cyber-btn" target="_blank">Github</a>
+                        }
+                        {
+                            props.demo &&
+                            <a href={props.demo} className="cyber-btn cyber-btn-secondary" target="_blank">Demo</a>
+                        }
+                        
                     </div>
                 </div>
             </div>

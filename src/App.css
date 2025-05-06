@@ -18,6 +18,7 @@
   display: block;          /* remove inline‐block gaps if any */
   margin-bottom: 1rem; 
 }
+
 :root {
   --bg-color: #121225;
   --text-color: #e0e0e0;
@@ -159,6 +160,9 @@ h2 {
   color: var(--neon-pink);
   text-shadow: 0 0 3px var(--neon-pink);
 }
+/* .resume-title {
+  color: var(--text-color);
+} */
 
 h3 {
   font-size: 1.6rem;
@@ -174,7 +178,7 @@ p {
 }
 
 a {
-  color: var(--neon-purple);
+  color: var(--text-color);
   text-decoration: none;
   position: relative;
   transition: all 0.3s;
@@ -224,8 +228,7 @@ header::before {
 }
 
 .title {
-  font-size: 1.4rem;
-  color: var(--text-color);
+  font-size: 1.75rem;
   letter-spacing: 2px;
   margin-top: 1rem;
   position: relative;
@@ -295,8 +298,14 @@ section::before {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
+  width:75%;
 }
-
+.skills {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .skill {
   background-color: rgba(26, 26, 46, 0.8);
   padding: 0.6rem 1.1rem;
@@ -314,11 +323,15 @@ section::before {
   box-shadow: 0 0 6px rgba(157, 78, 221, 0.4);
 }
 
+    
 .contact-info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1.2rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .contact-item {
@@ -326,16 +339,47 @@ section::before {
   align-items: center;
   gap: 1rem;
   transition: transform 0.3s;
-  padding: 0.7rem 1.3rem;
-  border-radius: 30px;
-  background-color: rgba(26, 26, 46, 0.8);
-  border: 1px solid rgba(57, 255, 20, 0.3);
-  box-shadow: 0 0 3px rgba(57, 255, 20, 0.2);
+  padding: 0.5rem 0;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
 }
 
 .contact-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 6px rgba(57, 255, 20, 0.3);
+  transform: translateX(5px);
+}
+
+.contact-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 2px var(--neon-blue));
+}
+.contact-info-row {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width:100%;
+}
+.contact-item a {
+  color: var(--text-color);
+  text-shadow: none;
+}
+.contact-item a::before {
+    background-color: var(--neon-green);
+    box-shadow: 0 0 3px var(--neon-green); 
+}
+
+.contact-item a:hover {
+  color: var(--neon-green);
+  text-shadow: 0 0 2px var(--neon-green);
+}
+.contact-label {
+  min-width: 80px;
+  color: var(--neon-pink);
+  font-weight: 500;
 }
 
 footer {
@@ -346,6 +390,20 @@ footer {
   font-size: 0.9rem;
   position: relative;
   opacity: 0.7;
+}
+footer a{
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.contact-img {
+  width:1rem;
+  height:1rem;
 }
 
 footer::before {
@@ -362,7 +420,19 @@ footer::before {
       rgba(0, 200, 255, 0)
   );
 }
-
+.skill-header {
+  width:50%;
+  text-align: center;
+  color:var(--neon-pink);
+  border-bottom: 2px solid var(--neon-pink);
+}
+.skill-header-div {
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 /* Project Cards */
 .projects-grid {
   display: grid;
@@ -433,6 +503,7 @@ footer::before {
 .project-title {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
+  text-align: center;
   color: var(--neon-purple);
 }
 
@@ -445,6 +516,8 @@ footer::before {
   display: flex;
   gap: 1rem;
   margin-top: auto;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /* Buttons */
@@ -487,11 +560,23 @@ footer::before {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .contact-info-row {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+  }
   h1 {
       font-size: 2.3rem;
       text-align: center;
   }
-  
+  .skill-header {
+    width:95%;
+    text-align: center;
+    color:var(--neon-pink);
+    border-bottom: 2px solid var(--neon-pink);
+  }
   h2 {
       font-size: 1.8rem;
       text-align: center;
@@ -516,6 +601,9 @@ footer::before {
       grid-template-columns: 1fr;
   }
   .contact-flex {
+    width:95%;
+  }
+  .skills-container {
     width:95%;
   }
 }
