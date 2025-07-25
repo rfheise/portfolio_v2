@@ -12,12 +12,12 @@ export default function Contact() {
             <div className="contact-info-row">
             <div className="contact-item">
                 <img src={email} alt="Email" className="contact-img"/>
-                <a href="mailto:ryan@heise.ai">ryan@heise.ai</a>
+                <a href="mailto:ryanfheise@gmail.com">ryanfheise@gmail.com</a>
             </div>
             
             <div className="contact-item">
                 <img src={linkedin} alt="LinkedIn" className="contact-img"/>
-                <a href="https://linkedin.com/in/ryanfheise" target="_blank">linkedin.com/in/ryanfheise.com</a>
+                <a href="https://linkedin.com/in/ryanfheise" target="_blank">linkedin.com/in/ryanfheise</a>
             </div>
             
             <div className="contact-item">
@@ -33,7 +33,7 @@ export default function Contact() {
                 
                 <div className="contact-item">
                     <img src={website} alt="website" className="contact-img"/>
-                    <a href="https://heise.ai" target="_blank">heise.ai</a>
+                    <a href="https://ryanfheise.com" target="_blank">ryanfheise.com</a>
                 </div>
             </div>
         </div>

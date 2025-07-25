@@ -1,4 +1,4 @@
-import propic from './images/header/propic_v2.jpeg'
+import propic from './images/header/propic_v3.jpg'
 import linkedin from './images/header/linkedin.svg'
 import github from './images/header/github.svg'
 import mail from './images/header/mail.png'
@@ -10,7 +10,7 @@ export default function Header() {
         <h1>Ryan Heise</h1>
         <img src = {propic} className="profile-pic" alt = "Profile Picture"/>
         <p className="title">My life goal is to organically get the best SEO for "Ryan Heise"</p>
-        <a className = "resume" href = "/resume.pdf">
+        <a className = "resume" href = "https://ryanfheise.com/files/resume" target="_blank" rel="noopener">
         <img src = {resume} alt = "resume" />
         <div className="resume-title">
             Resume
@@ -18,7 +18,7 @@ export default function Header() {
         </a>
         
         <div className="contact-flex">
-        <a href = "mailto:ryan@heise.ai"><img src = {mail} alt = "mail" /></a>
+        <a href = "mailto:ryanfheise@gmail.com"><img src = {mail} alt = "mail" /></a>
         <a href = "https://github.com/rfheise"><img src = {github} alt = "github" /></a>
         <a href = "https://linkedin.com/in/ryanfheise"><img src = {linkedin} alt = "linkedin" /></a>
         </div>
