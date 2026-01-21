@@ -15,7 +15,7 @@
   --radius: 14px;
   --shadow-sm: 0 1px 2px rgba(11, 18, 32, 0.08);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 16px 40px rgba(0, 0, 0, 0.34);
-  --scroll-offset: 120px;
+  --scroll-offset: 96px;
   --font-body: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
     "Apple Color Emoji", "Segoe UI Emoji";
   --font-display: "Cinzel", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -57,7 +57,7 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: var(--scroll-offset);
+  scroll-margin-top: 0px;
 }
 
 .deco-main > section {
@@ -66,7 +66,7 @@ section[id] {
 
 #top {
   height: 1px;
-  scroll-margin-top: var(--scroll-offset);
+  scroll-margin-top: 0px;
 }
 
 .deco-backdrop {
@@ -102,7 +102,7 @@ section[id] {
 }
 
 .deco-nav + header {
-  margin-top: 0px;
+  margin-top: 14px;
 }
 
 .deco-nav {
@@ -152,6 +152,16 @@ section[id] {
 }
 
 .deco-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.deco-nav a[aria-current="page"] {
+  background: linear-gradient(180deg, rgba(227, 193, 90, 0.22), rgba(43, 99, 217, 0.10));
+  border: 1px solid rgba(227, 193, 90, 0.32);
+  color: #ffffff;
+}
+
+.deco-nav a[aria-current="page"]::after {
   transform: scaleX(1);
 }
 
