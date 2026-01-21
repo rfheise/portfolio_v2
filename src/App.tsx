@@ -1,18 +1,17 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './App.css';
-import ExperienceList from './Experience/ExperienceList'
-import Education from './Education/Education'
-import ProjectList from './Project/ProjectList'
-import SkillList from './Skills/SkillList'
-
-import Header from './Header'
-import Contact from './Contact/Contact'
+import ExperienceList from './Experience/ExperienceList';
+import Education from './Education/Education';
+import ProjectList from './Project/ProjectList';
+import SkillList from './Skills/SkillList';
+import Header from './Header';
+import Contact from './Contact/Contact';
 
 
 function App() {
   const navItems = useMemo(
     () => [
-      { id: 'top', label: 'About' },
+      { id: 'top', label: 'Home' },
       { id: 'experience', label: 'Experience' },
       { id: 'education', label: 'Education' },
       { id: 'projects', label: 'Projects' },
@@ -26,12 +25,11 @@ function App() {
 
   useEffect(() => {
     const updateScrollOffset = () => {
-      const nav = document.querySelector<HTMLElement>('.deco-nav');
+      const nav = document.querySelector<HTMLElement>('.topbar');
       if (!nav) return;
       const navRect = nav.getBoundingClientRect();
-      const navTop = Number.parseFloat(getComputedStyle(nav).top || '0') || 0;
       const gap = 2;
-      const offset = Math.ceil(navRect.height + navTop + gap);
+      const offset = navRect.height + gap;
       document.documentElement.style.setProperty('--scroll-offset', `${offset}px`);
     };
 
@@ -39,31 +37,6 @@ function App() {
     void (document as unknown as { fonts?: { ready?: Promise<unknown> } }).fonts?.ready?.then(() => updateScrollOffset());
     window.addEventListener('resize', updateScrollOffset, { passive: true });
     return () => window.removeEventListener('resize', updateScrollOffset);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.add('js');
-
-    const revealElements = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
-    if (revealElements.length === 0) return;
-
-    if (!('IntersectionObserver' in window)) {
-      revealElements.forEach((el) => el.classList.add('is-visible'));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!(entry.target instanceof HTMLElement)) return;
-          if (entry.isIntersecting || entry.intersectionRatio > 0) entry.target.classList.add('is-visible');
-        });
-      },
-      { threshold: 0, rootMargin: '0px 0px -10% 0px' }
-    );
-
-    revealElements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -119,30 +92,54 @@ function App() {
   }, [navItems]);
 
   return (
-    <div className="App">
-        <div id="top" aria-hidden="true" />
-        <div className="deco-backdrop" aria-hidden="true" />
-        <nav className="deco-nav" aria-label="Primary">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              aria-current={activeSectionId === item.id ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+    <div className="page">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <div id="top" />
+
+      <header className="topbar" aria-label="Site">
+        <div className="topbar-inner">
+          <div className="brand">
+            <span className="brand-mark" aria-hidden="true" />
+            <a className="brand-name" href="#top">Ryan Heise</a>
+          </div>
+          <nav className="nav" aria-label="Primary">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                aria-current={activeSectionId === item.id ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <main id="main" className="main">
         <Header />
-        <main className="deco-main">
+        <section className="section" id="experience" aria-label="Experience">
           <ExperienceList />
+        </section>
+        <section className="section" id="education" aria-label="Education">
           <Education />
+        </section>
+        <section className="section" id="projects" aria-label="Projects">
           <ProjectList />
+        </section>
+        <section className="section" id="skills" aria-label="Skills">
           <SkillList />
-          <section id="contact" className="contact reveal" aria-label="Contact">
-            <Contact />
-          </section>
-        </main>
+        </section>
+        <section className="section" id="contact" aria-label="Contact">
+          <Contact />
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="footer-inner">
+          <div>© 2026 Ryan Heise</div>
+        </div>
+      </footer>
     </div>
   );
 }

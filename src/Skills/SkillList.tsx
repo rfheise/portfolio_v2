@@ -1,25 +1,34 @@
-import Skill from './Skill'
-import {frameworks, languages} from './SkillData'
+import Skill from './Skill';
+import { frameworks, languages } from './SkillData';
 
-export default function Skills() {
-    return (
-        <section id="skills" className="skills reveal">
-        <div className= "skill-header-div">
-        <h3 className='skill-header'>
-        Languages
-        </h3>
+export default function SkillList() {
+  return (
+    <div className="block">
+      <div className="section-head">
+        <div className="section-title">
+          <h2>Skills</h2>
         </div>
-        <div className="skills-container">
-            {languages.map(x => (<Skill name= {x}/>))}
+      </div>
+
+      <div className="skill-groups">
+        <div className="skill-group">
+          <h3 className="group-title">Languages</h3>
+          <div className="chips">
+            {languages.map((name) => (
+              <Skill key={name} name={name} />
+            ))}
+          </div>
         </div>
-        <div className= "skill-header-div">
-        <h3 className='skill-header'>
-            Technologies & Frameworks
-        </h3>
+
+        <div className="skill-group">
+          <h3 className="group-title">Technologies &amp; Frameworks</h3>
+          <div className="chips">
+            {frameworks.map((name) => (
+              <Skill key={name} name={name} />
+            ))}
+          </div>
         </div>
-        <div className="skills-container">
-            {frameworks.map(x => (<Skill name= {x}/>))}
-        </div>
-    </section>
-    )
+      </div>
+    </div>
+  );
 }
