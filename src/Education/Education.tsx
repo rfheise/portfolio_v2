@@ -8,7 +8,8 @@ export default function Education() {
         
         <div className="education-item">
             <h3>Bachelor of Science in Computer Science</h3>
-            <p className="date">Purdue University, December 2024</p>
+            <p className="date">Purdue University, West Lafayette, IN</p>
+            <p className="date">December 2024</p>
             <p>Concentrated in Machine Learning and Security, with a minor in Mathematics</p>
         </div>
     </section>

@@ -1,11 +1,19 @@
 import clipy from '../images/projects/clipy.jpeg'
 import java from '../images/projects/java.png'
-import football from '../images/projects/football.jpg'
+import football from '../images/projects/football.png'
 import democracy from '../images/projects/democracy.gif'
 import active from '../images/projects/loop.webp'
 import web from '../images/projects/gigachad.jpg'
 import dashit from '../images/projects/dashit.jpg'
-
+import shrek from '../images/projects/shrek.jpg'
+import nellie from '../images/projects/darth.jpg'
+import bytes from '../images/projects/daddydaniel.png'
+import co2view from '../images/projects/co2view.png'
+import artwork from '../images/projects/kramer.jpg'
+import terminal from '../images/projects/terminal.png'
+import memory from '../images/projects/memory.jpeg'
+import habits from '../images/projects/habits.jpg'
+import bank from '../images/projects/bank.png'
 
 export interface ProjectData {
     img:string, 
@@ -73,6 +81,72 @@ export let projects: ProjectData[] = [
         tech: "Django, Raspberry Pi",
         name: "Dash It",
         github:"https://github.com/rfheise/helloWrld-2020"
+    },
+    {
+        img:shrek, 
+        img_alt: "picasso",
+        about:"I built a neural style transfer model from scratch using PyTorch that applies the artistic style of one image to the content of another. I implemented the algorithm by optimizing a loss function that combines content and style representations extracted from a pre-trained convolutional neural network.",
+        tech: "PyTorch, Python",
+        name: "Neural Style Transfer",
+    },
+    {
+        img:bank,
+        img_alt: "bank",
+        about:"I trained a gradient boosted decision tree to predict whether or not an individual was likely to default on a loan. This was for a Purdue competition and I placed 2nd out of 93 teams.",
+        tech: "Python, Scikit-Learn, Pandas",
+        name: "Bank Loan Default Prediction",
+    },
+    {
+        img: artwork,
+        img_alt: "artwork",
+        about:"I built a convolutional neural network from scratch using PyTorch to classify images from the CIFAR-10 dataset. I implemented data augmentation techniques and experimented with different architectures to improve accuracy.",
+        tech: "PyTorch, Python",
+        name: "Image Classification CNN",
+    },
+    {
+        img: terminal, 
+        img_alt: "terminal",
+        about:"I implemented a Unix-like command line shell in C that supports features like piping, redirection, and job control. I used system calls to manage processes and handle user input, creating a functional and interactive shell environment.",
+        tech: "C++, Lex, Yacc",
+        name: "Custom Bash",
+    },
+    {
+        img: memory,
+        img_alt: "malloc",
+        about:"I implemented a custom memory allocator in C that mimics the behavior of malloc and free. I used techniques like segregated free lists and boundary tags to manage memory efficiently and reduce fragmentation.",
+        tech: "C",
+        name: "Custom Malloc",
+    },
+    {
+        img: habits,
+        img_alt: "habits",
+        about:"I constructed a full stack web application that allows me to track my progress on various goals using a video game like interface. I built the backend with Django, and the frontend with ReactJS.",
+        tech: "Python, TypeScript, Django, ReactJS",
+        name: "Heise Habits",
+        demo:"https://habits.heise.ai",
+    },
+    {
+        img:bytes,
+        img_alt: "Boiler Bytes",
+        about: "I built a decentralized web application that lets users mint nfts of various purdue professors on the etherum blockchain. I built the smart contract with solidity and the frontend with react.",
+        tech: "Solidity, ReactJS, Ethereum",
+        name: "Boiler Bytes",
+    },
+    {
+        img: co2view,
+        img_alt: "co2view",
+        about: "I built a web application that identifies the license plate of a vehicle and then uses that information to determine vehicle's the carbon emissions.",
+        tech: "Python, CV2, ReactJS, Django",
+        name: "CO2View",
+    },
+    {
+        img: nellie,
+        img_alt: "Australian Cattle Dog",
+        about: "I built a light weight stenography program that would hide data inside the lsb of each pixel. I then integrated this into a small python website using the CPython api. The image above contains the Darth Plagueis the wise quote.",
+        tech: "C, CPython, Flask",
+        name: "Steganographic Image Generator",
     }
+
+
 ]
 
