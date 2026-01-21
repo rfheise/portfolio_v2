@@ -3,7 +3,7 @@ import {frameworks, languages} from './SkillData'
 
 export default function Skills() {
     return (
-        <section className="skills active">
+        <section id="skills" className="skills reveal">
         <div className= "skill-header-div">
         <h3 className='skill-header'>
         Languages
