@@ -1,30 +1,31 @@
-import {ProjectData} from "./ProjectData"
+import { ProjectData } from './ProjectData';
 
-export default function Project(props:ProjectData) {
-    return (
-        <div className="project-card">
-                <div className="project-img">
-                    <div className="project-img-inner">
-                        <img src={props.img} alt={props.img_alt} />
-                    </div>
-                </div>
-                <div className="project-content">
-                    <h3 className="project-title">{props.name}</h3>
-                    <p className ="date" style = {{"textAlign":"center"}}>{props.tech}</p>
-                    <p className="project-description">{props.about}</p>
-                    <div className="project-links">
-                        {props.github &&
-                        <a href={props.github} className="cyber-btn" target="_blank" rel="noreferrer noopener">Github</a>
-                        }
-                        {
-                            props.demo &&
-                            <a href={props.demo} className="cyber-btn cyber-btn-secondary" target="_blank" rel="noreferrer noopener">Demo</a>
-                        }
-                        
-                    </div>
-                </div>
-            </div>
-
-    )
-    
+export default function Project(props: ProjectData) {
+  return (
+    <article className="card">
+      <div className="card-media" aria-hidden="true">
+        <img src={props.img} alt={props.img_alt} loading="lazy" />
+        <div className="card-media-glow" />
+      </div>
+      <div className="card-body">
+        <header className="card-head">
+          <h3 className="card-title">{props.name}</h3>
+          <p className="card-tech">{props.tech}</p>
+        </header>
+        <p className="card-desc">{props.about}</p>
+        <div className="card-actions">
+          {props.github && (
+            <a className="btn btn-small btn-primary" href={props.github} target="_blank" rel="noreferrer noopener">
+              GitHub
+            </a>
+          )}
+          {props.demo && (
+            <a className="btn btn-small btn-secondary" href={props.demo} target="_blank" rel="noreferrer noopener">
+              Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
+  );
 }

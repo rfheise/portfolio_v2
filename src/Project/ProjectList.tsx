@@ -1,14 +1,20 @@
-import Project from "./Project"
-import {projects} from "./ProjectData"
+import Project from './Project';
+import { projects } from './ProjectData';
 
-export default function ExperienceList() {
-    return (
-        <section id="projects" className="projects reveal">
-        <h2>Personal Projects</h2>
-        
-        <div className="projects-grid">
-            {projects.map(x => <Project {...x}/>)}
+export default function ProjectList() {
+  return (
+    <div className="block">
+      <div className="section-head">
+        <div className="section-title">
+          <h2>Projects</h2>
         </div>
-        </section>
-    )
+      </div>
+
+      <div className="cards" aria-label="Projects">
+        {projects.map((project) => (
+          <Project key={project.name} {...project} />
+        ))}
+      </div>
+    </div>
+  );
 }

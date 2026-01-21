@@ -1,13 +1,20 @@
-import Experience from "./Experience"
-import {experience} from "./ExperienceData"
+import Experience from './Experience';
+import { experience } from './ExperienceData';
 
 export default function ExperienceList() {
-    return (
-        <section id="experience" className="experience reveal">
-        <h2>Professional Experience</h2>
-        {experience.map(
-            x => (<Experience key = {x.company} {...x} />)
-        )}
-        </section>
-    )
+  return (
+    <div className="block">
+      <div className="section-head">
+        <div className="section-title">
+          <h2>Professional Experience</h2>
+        </div>
+      </div>
+
+      <div className="timeline" aria-label="Experience timeline">
+        {experience.map((item) => (
+          <Experience key={`${item.title}-${item.company}-${item.date}`} {...item} />
+        ))}
+      </div>
+    </div>
+  );
 }
