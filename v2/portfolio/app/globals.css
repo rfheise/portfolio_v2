@@ -104,9 +104,12 @@ a:focus-visible {
 }
 
 .topbar {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
   background: rgba(5, 8, 20, 0.55);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(227, 193, 90, 0.18);
@@ -183,7 +186,7 @@ a:focus-visible {
   max-width: var(--max);
   margin: 0 auto;
   width: 100%;
-  padding: 26px 18px 44px;
+  padding: calc(26px + var(--scroll-offset)) 18px 44px;
   display: flex;
   flex-direction: column;
   gap: 22px;
