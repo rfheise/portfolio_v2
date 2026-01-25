@@ -1,5 +1,6 @@
 import propic from './images/header/propic-v3.jpg';
 import Image from 'next/image'
+import Link from "next/link"
 function Icon({
   name,
   className,
@@ -88,9 +89,9 @@ export default function Header() {
             >
               <Icon name='linkedin' className="icon" />
             </a>
-            <a className="icon-link" href="https://meter.heise.ai" target="_blank" rel="noreferrer noopener" aria-label="Photos">
+            <Link className="icon-link" href="/photos"  >
               <Icon name="camera" className="icon" />
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -12,17 +12,20 @@ interface Props {
 }
 
 export default function DropDown(props:Props) {
+  const value = props.value ?? ""
+  const placeholderDisabled = Boolean(value)
+
   return (
     <select
       id={props.id}
-      value={props.value}
+      value={value}
       className={props.className}
       aria-label={props.ariaLabel}
       disabled={props.disabled}
       onChange={(event) => props.onChange(event.target.value)}
     >
       {props.placeholder ? (
-        <option value="" disabled hidden>
+        <option value="" disabled={placeholderDisabled}>
           {props.placeholder}
         </option>
       ) : null}
