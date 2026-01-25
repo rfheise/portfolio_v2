@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.96dabd22.css",
+    "main.js": "/static/js/main.3ec9b1ff.js",
+    "static/js/453.9ee93a36.chunk.js": "/static/js/453.9ee93a36.chunk.js",
+    "static/media/democracy.gif": "/static/media/democracy.1f276a7a294cc9b6768d.gif",
+    "static/media/football.jpg": "/static/media/football.c290f5fb8c668ff33988.jpg",
+    "static/media/clipy.jpeg": "/static/media/clipy.613988639ee0ef935447.jpeg",
+    "static/media/propic_v2.jpeg": "/static/media/propic_v2.a078e0da43ea62b7c491.jpeg",
+    "static/media/gigachad.jpg": "/static/media/gigachad.1b69dcb04c51c5b2b520.jpg",
+    "static/media/java.png": "/static/media/java.fc241426afd8f52a312e.png",
+    "static/media/dashit.jpg": "/static/media/dashit.1075a078ed92f7c4c772.jpg",
+    "static/media/loop.webp": "/static/media/loop.c6dd3aff586d36363684.webp",
+    "static/media/github.svg": "/static/media/github.c3e1fb14feff76a1e5ec2fa006997059.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.55cddcc48d896903f86e2a3fe2dae14c.svg",
+    "index.html": "/index.html",
+    "static/media/resume.svg": "/static/media/resume.3b787fb0d61b9f68694f3f3ff07cbff1.svg",
+    "main.96dabd22.css.map": "/static/css/main.96dabd22.css.map",
+    "main.3ec9b1ff.js.map": "/static/js/main.3ec9b1ff.js.map",
+    "453.9ee93a36.chunk.js.map": "/static/js/453.9ee93a36.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96dabd22.css",
+    "static/js/main.3ec9b1ff.js"
+  ]
+}
