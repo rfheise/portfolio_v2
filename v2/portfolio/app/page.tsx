@@ -8,7 +8,7 @@ import ProjectList from './_components/Project/ProjectList';
 import SkillList from './_components/Skills/SkillList';
 import Header from './_components/Header';
 import Contact from './_components/Contact/Contact';
-
+import Footer from './photos/_components/Footer'
 
 function App() {
   const navItems = useMemo(
@@ -24,8 +24,10 @@ function App() {
   );
 
   const [activeSectionId, setActiveSectionId] = useState<string>('top');
+  const [year, setYear] = useState<number>(2025)
 
   useEffect(() => {
+    setYear((new Date()).getFullYear())
     const updateScrollOffset = () => {
       const nav = document.querySelector<HTMLElement>('.topbar');
       if (!nav) return;
@@ -137,10 +139,9 @@ function App() {
         </section>
       </main>
     
-
       <footer className="footer">
         <div className="footer-inner">
-          <div>© 2026 Ryan Heise</div>
+          <div>© {year} Ryan Heise</div>
         </div>
       </footer>
     </div>
