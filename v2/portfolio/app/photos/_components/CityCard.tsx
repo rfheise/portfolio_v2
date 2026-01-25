@@ -14,6 +14,7 @@ export default function CityCard({ city }: Props) {
   return (
     <Link className="city-card" href={href} aria-label={`View photos from ${city.name}`}>
       <div className="city-frame" aria-hidden="true" />
+      <div className="city-cta" aria-hidden="true">View album →</div>
       <img className="city-img" src={imageUrl} alt={alt} loading="lazy" decoding="async" />
       <div className="city-meta">
         <h2 className="city-title">{city.name}</h2>
@@ -22,4 +23,3 @@ export default function CityCard({ city }: Props) {
     </Link>
   )
 }
-

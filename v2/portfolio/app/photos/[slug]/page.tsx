@@ -3,45 +3,106 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getCities, getPhotosForCity } from "../data"
 import { slugifyCityName } from "../slug"
-import { PhotoDisplay } from "../_components/Photo"
+import { type City, getImageURL, PhotoDisplay } from "../_components/Photo"
+import Footer from '../_components/Footer'
 import "../photo.css"
+import { siteConfig } from "../../site"
 
 type Props = {
   params: { slug: string }
 }
 
-export async function generateStaticParams() {
-  let cities = await getCities()
-  return cities.map((city) => ({slug: slugifyCityName(city.name)}))
-}
-
-function cleanCityName(city:string){
-  return city
+function cleanCitySlug(slug:string) {
+  return slug
   .split("-")
-  .map(s => (s ? s[0].toUpperCase() + s.slice(1) : s))
+  .map(s => s[0].toUpperCase() + s.slice(1))
   .join(" ");
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-
-  let city = (await params).slug
-  if (!city) return { title: "Photos" }
-  city = cleanCityName(city)
-
-  return {
-    title: `${city} Photos`,
-    description: `Photos from ${city}.`,
-  }
+export async function generateStaticParams() {
+  const cities = await getCities()
+  return cities.map((city) => ({slug: slugifyCityName(city.name)}))
 }
 
+// export async function generateMetadata({params}:Props): Promise<Metadata> {
+//   let slug = (await params).slug
+//   const city = cleanCitySlug(slug)
+//   if (!city) {
+//     const title = "Photos"
+//     const description = "City photo sets and highlights."
+
+//     return {
+//       title,
+//       description,
+//       alternates: {
+//         canonical: "/photos",
+//       },
+//       openGraph: {
+//         type: "website",
+//         url: "/photos",
+//         title,
+//         description,
+//         siteName: siteConfig.title,
+//         locale: siteConfig.locale,
+//         images: [
+//           {
+//             url: "/opengraph-image",
+//             width: 1200,
+//             height: 630,
+//             alt: title,
+//           },
+//         ],
+//       },
+//       twitter: {
+//         card: "summary_large_image",
+//         title,
+//         description,
+//         images: ["/twitter-image"],
+//       },
+//     }
+//   }
+
+//   const title = `${city} Photos`
+//   const description = `Photos from ${city}.`
+//   const canonical = `/photos/${slug}`
+//   const coverImage = null
+
+//   return {
+//     title,
+//     description,
+//     alternates: {
+//       canonical,
+//     },
+//     openGraph: {
+//       type: "website",
+//       url: canonical,
+//       title,
+//       description,
+//       siteName: siteConfig.title,
+//       locale: siteConfig.locale,
+//       images: coverImage
+//         ? [{ url: coverImage, alt: `Photos from ${city}` }]
+//         : [
+//             {
+//               url: "/opengraph-image",
+//               width: 1200,
+//               height: 630,
+//               alt: title,
+//             },
+//           ],
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title,
+//       description,
+//       images: coverImage ? [coverImage] : ["/twitter-image"],
+//     },
+//   }
+// }
+
 export default async function CityPhotosPage({params}: Props) {
-
-  const { slug } = await params
-
-  let city = slug
-  city = cleanCityName(city)
-  if (!city) notFound()
-
+  const city = cleanCitySlug((await params).slug)
+  // if (!city) notFound()
   const photos = await getPhotosForCity(city)
 
   return (
@@ -74,11 +135,7 @@ export default async function CityPhotosPage({params}: Props) {
         </section>
       </main>
 
-      <footer className="photos-footer">
-        <div className="photos-footer-inner">
-          <div>© 2026 Ryan Heise</div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

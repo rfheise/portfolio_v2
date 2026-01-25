@@ -6,7 +6,7 @@ function buildApiUrl(path: string): string {
   return `${URL_ROUTE}${path}`
 }
 
-let cache_life = { stale: 15 * 60, revalidate: 30 * 60, expire: 3600 * 24 }
+const cache_life = { stale: 15 * 60, revalidate: 30 * 60, expire: 3600 * 24 }
 export async function getCities(): Promise<City[]> {
   "use cache"
   cacheLife(cache_life)
@@ -34,4 +34,3 @@ export async function getPhotosForCity(cityName: string): Promise<Photo[]> {
     return []
   }
 }
-

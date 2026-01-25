@@ -1,11 +1,42 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import CityCard from "./_components/CityCard"
 import { getCities } from "./data"
+import Footer from './_components/Footer'
 import "./photo.css"
+import { siteConfig } from "../site"
 
-export const metadata = {
-  title: "Photos",
-  description: "City photo sets and highlights.",
+const title = "Photos"
+const description = "City photo sets and highlights."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: "/photos",
+  },
+  openGraph: {
+    type: "website",
+    url: "/photos",
+    title,
+    description,
+    siteName: siteConfig.title,
+    locale: siteConfig.locale,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/twitter-image"],
+  },
 }
 
 export default async function Photos() {
@@ -16,10 +47,10 @@ export default async function Photos() {
 
       <header className="photos-hero" aria-label="Photos">
         <div className="photos-hero-inner">
-          <p className="photos-kicker">Photography</p>
+          {/* <p className="photos-kicker">Photography</p> */}
           <h1 className="photos-title">Photos</h1>
           <p className="photos-subtitle">
-            Click On Each Photo Album To View It
+            It&apos;s not the years, honey, it&apos;s the mileage
           </p>
         </div>
 
@@ -42,11 +73,7 @@ export default async function Photos() {
         </section>
       </main>
 
-      <footer className="photos-footer">
-        <div className="photos-footer-inner">
-          <div>© 2026 Ryan Heise</div>
-        </div>
-      </footer>
+     <Footer />
     </div>
   )
 }
