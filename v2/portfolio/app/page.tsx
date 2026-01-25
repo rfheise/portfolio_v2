@@ -136,6 +136,7 @@ function App() {
           <Contact />
         </section>
       </main>
+    
 
       <footer className="footer">
         <div className="footer-inner">
