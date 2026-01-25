@@ -35,7 +35,7 @@ code {
   --radius: 18px;
   --max: 1120px;
   --scroll-offset: 80px;
-  --font-body: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+  --font-body: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
     "Apple Color Emoji", "Segoe UI Emoji";
   --font-display: "Cinzel", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
