@@ -10,6 +10,13 @@ export interface ExperienceData {
 
 export let experience: ExperienceData[] = [
     {
+        title: "Software Engineer",
+        location: "Austin, TX Metropolitan Area",
+        company: "SpaceX",
+        date: "March 2026 - Present",
+        about: [""]
+    },
+    {
         title: "Substitute Teacher",
         location: "Lafayette, IN",
         company: "Lafayette Community Schools",
